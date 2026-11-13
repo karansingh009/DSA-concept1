@@ -1,0 +1,206 @@
+🔹 MONTH-WISE DSA ROADMAP (JAVA)
+🟩 MONTH 1 – Java + Basic Problem Solving
+
+👉 Goal: Become comfortable with Java & logic
+
+Week 1–2: Java Fundamentals
+
+Variables, Data types
+ 
+Loops (for, while)
+
+Functions
+
+Arrays
+
+Strings
+
+Time & Space Complexity
+
+🧠 Practice:
+
+Reverse array
+
+Max/min element
+
+Palindrome string
+
+Count frequency
+
+Week 3–4: Basic Math + Recursion
+
+Prime numbers
+
+GCD / LCM
+
+Recursion basics
+
+Fibonacci
+
+Factorial
+
+🧠 Problems:
+
+Sum of digits
+
+Power using recursion
+
+Check palindrome (recursion)
+
+📌 Platform: LeetCode / GeeksforGeeks
+
+🟨 MONTH 2 – Arrays & Searching
+
+👉 Goal: Master array-based logic
+
+Topics
+
+Array traversal
+
+Prefix sum
+
+Kadane’s Algorithm
+
+Two pointers
+
+Sliding window
+
+Binary Search
+
+🧠 Must-do Problems:
+
+Two Sum
+
+Maximum Subarray
+
+Move zeros
+
+Best time to buy/sell stock
+
+Binary search variations
+
+📈 Difficulty: Easy → Medium
+
+🟦 MONTH 3 – Strings, Hashing & Stack
+
+👉 Goal: Improve logic & optimization
+
+Strings
+
+Anagram
+
+Longest common prefix
+
+Substrings
+
+Hashing
+
+HashMap, HashSet
+
+Frequency problems
+
+Subarray with sum = k
+
+Stack
+
+Valid parentheses
+
+Next greater element
+
+Stock span
+
+📌 Focus on why HashMap/Stack is used
+
+🟪 MONTH 4 – Linked List & Queue
+
+👉 Goal: Pointer handling mastery
+
+Linked List
+
+Insert, delete
+
+Reverse LL
+
+Detect loop
+
+Middle of LL
+
+Merge two sorted LL
+
+Queue & Deque
+
+Queue using array
+
+Sliding window maximum
+
+🧠 Important for interviews ⚠️
+
+🟥 MONTH 5 – Trees & Binary Search Trees
+
+👉 Goal: Core interview section
+
+Trees
+
+Traversals (Inorder, Preorder, Postorder)
+
+Height, Diameter
+
+Level order
+
+Lowest Common Ancestor
+
+BST
+
+Insert, search
+
+Validate BST
+
+Kth smallest element
+
+📌 Spend more time here (very important)
+
+🟧 MONTH 6 – Graphs + DP + Revision
+
+👉 Goal: Become interview-ready
+
+Graphs
+
+BFS, DFS
+
+Cycle detection
+
+Connected components
+
+Dynamic Programming
+
+Fibonacci DP
+
+0/1 Knapsack
+
+Longest Common Subsequence
+
+Coin change
+
+Last 2 Weeks
+
+Revise all topics
+
+Daily mock interviews
+
+Solve mixed problems
+
+🔹 WEEKLY TARGET
+
+20–25 problems/week
+
+2 contest/week (LeetCode)
+
+1 full revision day
+
+🔹 MUST-FOLLOW RULES (FOR GOOD PACKAGE)
+
+✔️ Code daily (no zero days)
+✔️ Don’t jump to solutions early
+✔️ Maintain DSA notebook
+✔️ Focus on quality > quantity
+✔️ Java syntax should be interview-clean

@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Occasions Catering - Premium Event Services</title>
+    <style>
+        /* General Styling */
+        :root {
+            --primary-color: #B8860B; /* Dark Goldenrod */
+            --secondary-color: #DAA520; /* Goldenrod */
+            --light-bg: #FFF8E1; /* Light Cream */
+            --dark-text: #333333;
+            --white: #ffffff;
+            --cream: #fdfaf1;
+            --light-pastel: #F0F8FF; /* Aliceblue */
+            --font-family: 'Georgia', serif; /* Elegant font */
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Base font size */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-family);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn.primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn.primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn.secondary {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn.secondary:hover {
+            background-color: var(--light-pastel);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .logo {
+            margin: 0;
+            font-size: 1.8rem; /* Adjusted for header */
+            white-space: nowrap; /* Keep logo on one line */
+        }
+
+        header nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header nav a {
+            margin: 0 0.8rem;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .contact-header {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap; /* Allow wrapping */
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfaf1 0%, #fae2b1 100%); /* Soft gradient */
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--dark-text);
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Hide overflowing emojis */
+        }
+
+        .hero::before {
+            content: "🎪👰🤵🍽️🥂✨🍲🍣🥗🍓🍰🍹👨‍🍳👩‍🍳💎🏢🎉"; /* Large compilation of hero emojis */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-10deg);
+            font-size: 8em; /* Super large */
+            opacity: 0.1; /* Very subtle background visual proof */
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 1rem;
+            max-width: 800px;
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--dark-text);
+        }
+
+        .hero-buttons .btn {
+            margin: 0 0.8rem;
+            min-width: 180px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .section.bg-light {
+            background-color: var(--cream);
+        }
+
+        .section h3 {
+            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+        }
+
+        .lead-text {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* About Us Section */
+        #about p {
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .team-mission {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .team-mission > div {
+            flex: 1;
+            min-width: 300px;
+            max-width: 45%;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        /* Services Grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Menu Section */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tab-button {
+            background-color: var(--light-pastel);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .tab-button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .menu-content {
+            display: none;
+            text-align: left;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-content.active {
+            display: block;
+        }
+
+        .menu-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-content li {
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap; /* Allow wrapping for long items/dietary info */
+        }
+
+        .menu-content li:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: var(--dark-text);
+            flex-grow: 1;
+        }
+
+        .dietary {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            margin-left: 1rem;
+            white-space: nowrap; /* Prevent breaking */
+        }
+
+        .customizable-note {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 150px;
+        }
+
+        .gallery-item p {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .gallery-item span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card .rating {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .testimonial-card .client-name {
+            font-weight: bold;
+            text-align: right;
+            font-style: normal;
+            color: var(--dark-text);
+            font-size: 0.95rem;
+        }
+
+        .client-logos {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed #eee;
+        }
+
+        .client-logos h4 {
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .client-logos span {
+            display: inline-block;
+            margin: 0.5rem 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        /* Contact Form */
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            width: calc(100% - 20px);
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: var(--font-family);
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(184, 134, 11, 0.3); /* Using RGB for opacity */
+        }
+
+        .booking-form .btn {
+            margin-top: 1.5rem;
+            width: auto;
+        }
+        .booking-form .btn.secondary {
+            margin-left: 1rem;
+        }
+
+        .direct-contact {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #eee;
+        }
+
+        .direct-contact p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .direct-contact p a {
+            font-weight: bold;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--light-bg);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-footer a {
+            color: var(--light-bg);
+            margin: 0 0.8rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .contact-footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            .hero-buttons .btn {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .team-mission > div {
+                max-width: 80%;
+            }
+            .service-grid, .gallery-grid, .testimonial-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            header nav {
+                margin: 1rem 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            header nav a {
+                margin: 0 0.5rem;
+            }
+            .contact-header {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .logo {
+                font-size: 1.6rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+            .section h3 {
+                font-size: 2rem;
+            }
+            .hero::before {
+                font-size: 5em; /* Smaller on mobile */
+            }
+
+            .menu-content li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .dietary {
+                margin-left: 0;
+                margin-top: 0.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px; /* Smaller base font for very small screens */
+            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+
+            .hero {
+                height: 60vh;
+            }
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+            }
+
+            .menu-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            .tab-button {
+                width: 90%;
+                max-width: 250px;
+            }
+
+            .booking-form .btn {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+            .booking-form .btn.secondary {
+                margin-left: 0;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .contact-footer {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .contact-footer a {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Grand Occasions Catering ✨</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#menu">Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="contact-header">
+                <a href="tel:+1234567890">📞 (123) 456-7890</a>
+                <a href="mailto:info@grandoccasions.com">✉️ info@grandoccasions.com</a>
+                <a href="https://wa.me/1234567890" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Your Dream Event, Perfectly Catered</h2>
+                <p>Exquisite Wedding Tent Setups & Gourmet Catering for Unforgettable Moments.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary">Get a Free Quote ✨</a>
+                    <a href="#menu" class="btn secondary">Explore Menus 🍽️</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h3>About Grand Occasions Catering</h3>
+                <p>With over two decades of experience, Grand Occasions Catering specializes in transforming your vision into a magnificent reality. From stunning tent setups to bespoke culinary experiences, our dedicated team ensures every detail of your wedding, corporate event, or private party is handled with precision and passion. Our mission is to deliver unparalleled service and create memories that last a lifetime.</p>
+                <div class="team-mission">
+                    <div>
+                        <h4>Our Experience</h4>
+                        <p>Leveraging years of expertise in event management and gourmet catering, we've successfully orchestrated hundreds of events, each unique and flawlessly executed. Our commitment to excellence is reflected in every celebration we bring to life.</p>
+                    </div>
+                    <div>
+                        <h4>Our Team</h4>
+                        <p>Our award-winning chefs, seasoned event planners, and professional service staff work in harmony to provide a seamless and stress-free experience. We are passionate about food, design, and exceptional hospitality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section bg-light">
+            <div class="container">
+                <h3>Our Premium Services</h3>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h4>Wedding Tent & Decoration 🎪👰</h4>
+                        <p>Elegant tent structures, sophisticated lighting, and breathtaking decor to create your dream wedding venue. Capacity: 50-500 guests.</p>
+                        <p>Examples: Marquee tents, custom floral arrangements, luxurious drapery, themed lighting.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Wedding Catering 🍽️🥂</h4>
+                        <p>Tailored gourmet menus designed to delight your guests on your special day. From lavish buffets to plated dinners. Capacity: 50-500 guests.</p>
+                        <p>Examples: Multi-course meals, custom wedding cakes, dessert bars, cocktail receptions.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Corporate Event Catering 🏢🤝</h4>
+                        <p>Professional catering solutions for corporate meetings, galas, and product launches. Impress clients and colleagues. Capacity: 30-1000 guests.</p>
+                        <p>Examples: Executive lunches, grand banquets, networking receptions, branded food stations.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Private Party Catering 🎉🥳</h4>
+                        <p>Custom culinary experiences for birthdays, anniversaries, and intimate gatherings. Relax and enjoy your celebration. Capacity: 20-200 guests.</p>
+                        <p>Examples: Family-style dinners, themed party buffets, BBQ events, special occasion cakes.</p>
+                    </div>
+                    <div class="service-card">
+                        <h4>Food & Beverage Services 🍹🍰</h4>
+                        <p>Comprehensive beverage packages including open bars, signature cocktails, and non-alcoholic options, paired with exquisite food displays.</p>
+                        <p>Examples: Craft cocktails, fine wine selections, gourmet coffee bars, juice stations, custom dessert tables.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="section">
+            <div class="container">
+                <h3>Our Exquisite Menus</h3>
+                <div class="menu-tabs">
+                    <button class="tab-button active" data-tab="starters">Starters 🍢</button>
+                    <button class="tab-button" data-tab="main">Main Courses 🍲</button>
+                    <button class="tab-button" data-tab="desserts">Desserts 🍰</button>
+                    <button class="tab-button" data-tab="beverages">Beverages 🥂</button>
+                </div>
+                <div id="starters" class="menu-content active">
+                    <h4>Starters</h4>
+                    <ul>
+                        <li><span class="item-name">Caprese Skewers</span> <span class="dietary">(V, GF)</span> - Fresh mozzarella, cherry tomatoes, basil, balsamic glaze.</li>
+                        <li><span class="item-name">Smoked Salmon Crostini</span> - Dill cream cheese, capers, red onion.</li>
+                        <li><span class="item-name">Mushroom Arancini</span> <span class="dietary">(V)</span> - Crispy risotto balls with wild mushrooms, truffle aioli.</li>
+                        <li><span class="item-name">Spicy Tuna Tartare Bites</span> - Ahi tuna, avocado, sriracha mayo on cucumber rounds.</li>
+                        <li><span class="item-name">Mini Vegetable Samosas</span> <span class="dietary">(V, Vegan option available)</span> - Served with mint chutney.</li>
+                    </ul>
+                </div>
+                <div id="main" class="menu-content">
+                    <h4>Main Courses</h4>
+                    <ul>
+                        <li><span class="item-name">Pan-Seared Salmon</span> <span class="dietary">(GF)</span> - Lemon-dill sauce, asparagus, roasted baby potatoes.</li>
+                        <li><span class="item-name">Herb-Crusted Rack of Lamb</span> - Rosemary jus, seasonal root vegetables.</li>
+                        <li><span class="item-name">Slow-Cooked Beef Brisket</span> <span class="dietary">(GF)</span> - Red wine reduction, creamy polenta.</li>
+                        <li><span class="item-name">Vegetarian Lasagna</span> <span class="dietary">(V)</span> - Layers of fresh pasta, ricotta, spinach, marinara.</li>
+                        <li><span class="item-name">Portobello Mushroom Steak</span> <span class="dietary">(V, Vegan, GF)</span> - Grilled portobello, quinoa salad, chimichurri.</li>
+                        <li><span class="item-name">Chicken Marsala</span> - Pan-seared chicken breast with mushroom marsala sauce, wild rice.</li>
+                    </ul>
+                </div>
+                <div id="desserts" class="menu-content">
+                    <h4>Desserts</h4>
+                    <ul>
+                        <li><span class="item-name">Chocolate Lava Cake</span> <span class="dietary">(V)</span> - With raspberry coulis.</li>
+                        <li><span class="item-name">Classic Tiramisu</span> <span class="dietary">(V)</span> - Layers of coffee-soaked ladyfingers, mascarpone.</li>
+                        <li><span class="item-name">Mini Fruit Tarts</span> <span class="dietary">(V)</span> - Fresh seasonal fruits, pastry cream.</li>
+                        <li><span class="item-name">Vegan Chocolate Mousse</span> <span class="dietary">(V, Vegan, GF)</span> - Rich avocado-based mousse.</li>
+                        <li><span class="item-name">Lemon Meringue Shooters</span> <span class="dietary">(V)</span> - Tart lemon curd, sweet meringue.</li>
+                    </ul>
+                </div>
+                <div id="beverages" class="menu-content">
+                    <h4>Beverages</h4>
+                    <ul>
+                        <li><span class="item-name">Premium Coffee & Tea Selection</span></li>
+                        <li><span class="item-name">Assorted Soft Drinks & Juices</span></li>
+                        <li><span class="item-name">Sparkling & Still Water</span></li>
+                        <li><span class="item-name">Signature Wedding Punch</span> <span class="dietary">(Non-alcoholic)</span></li>
+                        <li><span class="item-name">Wine & Beer Package</span> <span class="dietary">(Customizable)</span></li>
+                        <li><span class="item-name">Craft Cocktail Bar</span> <span class="dietary">(Customizable)</span></li>
+                    </ul>
+                </div>
+                <p class="customizable-note">✨ Customizable menus available for all dietary needs and event themes!</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="section bg-light">
+            <div class="container">
+                <h3>Our Event Gallery 📸🥳</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <p>Wedding Tent Setup 👰🤵🎪</p>
+                        <span>A romantic setting under the stars.</span>
+                    </div>
+                    <div class="gallery-item">
+                        <p>Elegant Banquet Dining 🍽️🥂✨</p>
+                        <span>Sophisticated table settings for grand celebrations.</span>
+                    </div>
+                    <div class="gallery-item">
+                        <p>Gourmet Buffet Display 🍲🍣🥗</p>
+                        <span>A feast for the eyes and the palate.</span>
+                    </div>
+                    <div class="gallery-item">
+                        <p>Corporate Event Setup 🏢💡</p>
+                        <span>Professional environment with impeccable service.</span>
+                    </div>
+                    <div class="gallery-item">
+                        <p>Dessert Bar Extravaganza 🍓🍰🍩</p>
+                        <span>Sweet endings to perfect events.</span>
+                    </div>
+                    <div class="gallery-item">
+                        <p>Beverage Station 🍹🍸</p>
+                        <span>Refreshing drinks served with style.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="section">
+            <div class="container">
+                <h3>What Our Clients Say 💬</h3>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p>"Grand Occasions made our wedding day absolutely perfect! The tent was stunning, and the food was out of this world. Our guests are still talking about it!"</p>
+                        <p class="client-name">- Sarah & Mark T., Wedding Clients</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p>"For our annual corporate gala, Grand Occasions delivered exceptional service and a truly gourmet experience. Highly recommended for any large event."</p>
+                        <p class="client-name">- Emily R., Event Coordinator at TechCorp Inc. 🏢</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="rating">⭐⭐⭐⭐⭐</p>
+                        <p>"The catering for my parents' anniversary party was flawless. Every dish was delicious, and the staff were incredibly attentive and professional."</p>
+                        <p class="client-name">- David L., Private Party Host</p>
+                    </div>
+                </div>
+                <div class="client-logos">
+                    <h4>Trusted By:</h4>
+                    <span>Event Solutions Inc. 🤝</span>
+                    <span>Luxury Weddings Co. 💎</span>
+                    <span>City Bank 🏦</span>
+                    <span>The Grand Hotel 🏨</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h3>Get Your Free Quote / Book Your Event</h3>
+                <p class="lead-text">Ready to plan your unforgettable event? Fill out the form below or contact us directly.</p>
+
+                <form class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventType">Event Type:</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">Select Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="party">Private Party</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Event Date:</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests:</label>
+                        <input type="number" id="guests" name="guests" min="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Event Location:</label>
+                        <input type="text" id="location" name="location" placeholder="City, State/Venue Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details (optional):</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Submit Request ✨</button>
+                    <a href="#contact" class="btn secondary">Schedule a Tasting 🍽️</a>
+                </form>
+                <div class="direct-contact">
+                    <p>Or contact us directly:</p>
+                    <p>📞 <a href="tel:+1234567890">(123) 456-7890</a></p>
+                    <p>✉️ <a href="mailto:info@grandoccasions.com">info@grandoccasions.com</a></p>
+                    <p>💬 <a href="https://wa.me/1234567890" target="_blank">WhatsApp Us</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Grand Occasions Catering. All rights reserved.</p>
+            <div class="contact-footer">
+                <a href="tel:+1234567890">📞 (123) 456-7890</a>
+                <a href="mailto:info@grandoccasions.com">✉️ info@grandoccasions.com</a>
+                <a href="https://wa.me/1234567890" target="_blank">💬 WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Menu Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const menuContents = document.querySelectorAll('.menu-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove 'active' class from all buttons and content
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    menuContents.forEach(content => content.classList.remove('active'));
+
+                    // Add 'active' class to the clicked button
+                    button.classList.add('active');
+
+                    // Display the corresponding menu content
+                    const targetTab = button.dataset.tab;
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Booking Form Submission
+            const bookingForm = document.querySelector('.booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent actual form submission
+
+                    const formData = new FormData(bookingForm);
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        formObject[key] = value;
+                    });
+
+                    console.log('Booking Request Submitted:', formObject);
+                    alert('Thank you for your booking request! We will contact you shortly. Check console for details.'); // User feedback
+
+                    // Optional: Clear the form after submission
+                    bookingForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

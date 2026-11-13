@@ -1,0 +1,25 @@
+orientation means where we have to focus.
+
+encapsulation means exposing the selected information and hiding necessary information.
+
+Access modifiers comes in ecncapsulation
+class can only be default and public. The standard is default in maximum case because in default we give only some access.
+
+variable and method can be  private, default, protected and public.
+
+getter and setter also come in encapsulation.
+
+implementation of encapsulation is done in java through 
+access modifier, getter/ setter and import and packaging.
+
+In abstraction we hide complex information to reduce complexity.(Saar nikaaldena). It tells implementation details
+
+In inheritance entities can inherit attributes from other entities.
+
+polymorphism entities can have more than one form.
+
+ 
+import java.util.Scanner
+java ek folder hai ya package hai uske undar util naam ka ek package hai and uske andar Scanner naam ki ek class hai.
+
+ 
