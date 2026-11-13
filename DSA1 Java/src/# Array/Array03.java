@@ -7,7 +7,7 @@ public class Array03 {
         arr[1][0] = 14;
         arr[1][1] = 43;
         arr[1][2] = 32;
-        arr[2][0] = 52;
+        arr[2][0] = 44;
         arr[2][1] = 19;
         arr[2][2] = 29;
         int i = 0;
